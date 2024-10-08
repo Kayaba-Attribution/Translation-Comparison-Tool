@@ -92,3 +92,8 @@ The goal of the app is to allow users to input text, select an original language
 - **Custom Translation Profiles**: Enable users to create profiles that save their preferred settings and past translations.
 
 This summary outlines the core aspects of your translation comparison tool project, setting a clear direction for its development and future enhancements. Let me know if you need further details or specific guidance on any part!
+
+
+https://winkjs.org/examples.html
+https://github.com/spencermountain/compromise
+http://www.elinguistics.net/Language_Evolutionary_Tree.html
