@@ -25,6 +25,10 @@ const languages: Language[] = [
   { code: "EN", name: "English" },
   { code: "ES", name: "Spanish" },
   { code: "FR", name: "French" },
+  { code: "DE", name: "German" },
+  { code: "ZH", name: "Chinese" },
+  // italian
+  { code: "IT", name: "Italian" },
 ];
 
 // Function to get language name by code
