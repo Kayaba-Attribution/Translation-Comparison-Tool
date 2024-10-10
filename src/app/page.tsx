@@ -4,10 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import { Switch } from "@/components/ui/switch";
 import {
-  SunIcon,
-  MoonIcon,
   BookOpen,
   Music,
   Map,
@@ -20,15 +17,7 @@ import CustomTimeAgo from "../components/utils/CustomTimeAgo";
 // import TiltComponent from '../components/ui/TiltComponent';
 
 const HomePage = () => {
-  const [darkMode, setDarkMode] = useState(false);
   const [jokeOfTheDay, setJokeOfTheDay] = useState("");
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-    if (typeof document !== "undefined") {
-      document.documentElement.classList.toggle("dark", !darkMode);
-    }
-  };
 
   useEffect(() => {
     const jokes = [
@@ -45,7 +34,7 @@ const HomePage = () => {
     <div className={`min-h-screen transition-colors duration-300`}>
       {/* Main content */}
       <main className="pt-8 p-6 flex flex-col items-center space-y-12">
-        <h2 className="text-4xl font-semibold ">
+        <h2 className="text-4xl font-semibold text-center">
           Welcome, Alexis Liáng Shù!
           <div className="text-sm">
             It&apos;s been <CustomTimeAgo date="Oct 6, 2024" /> since we met :)
@@ -121,7 +110,7 @@ const HomePage = () => {
             <Map className="w-12 h-12 text-blue-500 mb-4" />
             <h2 className="text-xl font-semibold mb-2">Adventure Journal</h2>
             <p className="mb-4">
-              Map your travels and places you'd love to visit.
+              Map your travels and places you&apos;d love to visit.
             </p>
             <Button variant="outline" className="w-full">
               View Adventure Journal
@@ -132,7 +121,7 @@ const HomePage = () => {
             <Gamepad2 className="w-12 h-12 text-blue-500 mb-4" />
             <h2 className="text-xl font-semibold mb-2">Visual Novel Vault</h2>
             <p className="mb-4">
-              Keep track of the visual novels you've played or want to explore.
+              Keep track of the visual novels you&apos;ve played or want to explore.
             </p>
             <Button variant="outline" className="w-full">
               Explore Visual Novels

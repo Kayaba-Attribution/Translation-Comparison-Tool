@@ -1,4 +1,4 @@
-"use client" 
+"use client";
 import * as React from "react";
 import Link from "next/link";
 
@@ -6,9 +6,20 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 
 export function Navbar() {
+  const { setTheme } = useTheme();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [currentTheme, setCurrentTheme] = React.useState("system");
+
+  function toggleTheme() {
+    console.log("currentTheme", currentTheme);
+    // toggles between light and dark mode
+    setCurrentTheme(currentTheme === "system" ? "dark" : "system");
+    setTheme(currentTheme === "system" ? "dark" : "system");
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -109,7 +120,7 @@ export function Navbar() {
           </Sheet>
         </div>
         <div className="flex items-center justify-end space-x-2">
-          <Switch />
+          <Switch onClick={toggleTheme} />
         </div>
       </div>
     </header>

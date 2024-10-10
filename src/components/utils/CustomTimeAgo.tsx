@@ -2,17 +2,15 @@
 
 import React from "react";
 import TimeAgo from "react-timeago";
-import { FormatterFn } from "react-timeago/lib/formatters";
 
 interface CustomTimeAgoProps {
   date: string | number | Date;
 }
 
 const CustomTimeAgo: React.FC<CustomTimeAgoProps> = ({ date }) => {
-  const customFormatter: FormatterFn = (
+  const customFormatter = (
     unit: string,
-    suffix: any,
-    nextFormatter: () => any
+    nextFormatter: () => unknown
   ) => {
     if (unit === "second" || unit === "minute" || unit === "hour") {
       // For recent times, use the default formatter

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import LoveMessage from "@/components/utils/LoveMessage";
 import { Navbar } from "@/components/utils/navbar";
+import { ThemeProvider } from "@/components/utils/themeProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +31,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <Navbar />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        ></ThemeProvider>
+        <Navbar />
         {children}
         <LoveMessage />
       </body>
