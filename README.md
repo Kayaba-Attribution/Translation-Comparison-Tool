@@ -72,20 +72,6 @@ The goal of the app is to allow users to input text, select an original language
   - Simple and intuitive interface for easy user interaction.
   - Responsive design for compatibility with mobile and desktop devices.
 
-### **MVP Development Plan**
-1. **Set Up Next.js App**: Initialize a new Next.js project with TypeScript and the App Router.
-2. **Create Input Form**:
-   - Text area for inputting text.
-   - Dropdown menus for selecting the original and target languages.
-   - A button to submit the request for translation.
-3. **API Integration**:
-   - Write functions to call the translation APIs and fetch translations based on user input.
-4. **Display Translations**:
-   - Create a component to display the original text alongside the translations from different APIs.
-5. **Comparison Logic**:
-   - Implement a basic mechanism to analyze and categorize differences in translations (for future iterations).
-6. **Styling**: Use global CSS or Tailwind CSS (if enabled) for styling the components.
-
 ### **Future Enhancements**
 - **Comparison Analysis**: Develop a more sophisticated analysis tool that highlights differences in lexical and semantic aspects.
 - **User Authentication**: Allow users to save their translation comparisons and access them later.
@@ -97,3 +83,8 @@ This summary outlines the core aspects of your translation comparison tool proje
 https://winkjs.org/examples.html
 https://github.com/spencermountain/compromise
 http://www.elinguistics.net/Language_Evolutionary_Tree.html
+
+
+https://github.com/anatoliygatt/heart-switch
+
+https://github.com/mkosir/react-parallax-tilt
