@@ -6,19 +6,19 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Switch } from "@/components/ui/switch";
-import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export function Navbar() {
   const { setTheme } = useTheme();
   const [isOpen, setIsOpen] = React.useState(false);
-  const [currentTheme, setCurrentTheme] = React.useState("system");
+  const [currentTheme, setCurrentTheme] = React.useState("light");
 
   function toggleTheme() {
     console.log("currentTheme", currentTheme);
     // toggles between light and dark mode
-    setCurrentTheme(currentTheme === "system" ? "dark" : "system");
-    setTheme(currentTheme === "system" ? "dark" : "system");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    setCurrentTheme(newTheme);
+    setTheme(newTheme);
   }
 
   return (

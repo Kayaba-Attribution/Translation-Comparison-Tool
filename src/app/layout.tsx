@@ -36,10 +36,11 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        ></ThemeProvider>
-        <Navbar />
-        {children}
-        <LoveMessage />
+        >
+          <Navbar />
+          {children}
+          <LoveMessage />
+        </ThemeProvider>
       </body>
     </html>
   );
