@@ -23,13 +23,13 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="max-w-7xl mx-auto container flex h-14 items-center w-full">
+      <div className="max-w-7xl mx-auto container flex h-14 items-center w-full px-4">
         <div className="flex items-center space-x-2">
           <Avatar>
-            <AvatarImage src="/placeholder-avatar.jpg" alt="Alexis Web" />
-            <AvatarFallback>AW</AvatarFallback>
+            <AvatarImage src="/images/globe.png" alt="Alexis Web" />
+            <AvatarFallback>AJ</AvatarFallback>
           </Avatar>
-          <span className="font-semibold">Alexis Web</span>
+          <span className="font-semibold">Alexis & Juan κόσμος</span>
         </div>
         <div className="flex flex-1 items-center justify-center space-x-2 sm:space-x-4">
           <nav className="flex items-center space-x-6 text-sm font-medium">

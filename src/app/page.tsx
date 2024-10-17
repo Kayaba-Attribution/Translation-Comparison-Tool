@@ -4,14 +4,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
-import {
-  BookOpen,
-  Music,
-  Map,
-  Gamepad2,
-  Book,
-  Globe,
-} from "lucide-react";
+import { BookOpen, Music, Map, Gamepad2, Book, Globe } from "lucide-react";
+import Image from "next/image";
 
 import CustomTimeAgo from "../components/utils/CustomTimeAgo";
 // import TiltComponent from '../components/ui/TiltComponent';
@@ -34,52 +28,45 @@ const HomePage = () => {
     <div className={`min-h-screen transition-colors duration-300`}>
       {/* Main content */}
       <main className="pt-8 p-6 flex flex-col items-center space-y-12">
-        <h2 className="text-4xl font-semibold text-center">
-          Welcome, Alexis Liáng Shù!
-          <div className="text-sm">
+        <div>
+          <div className="text-2xl font-regular italic text-center pb-2">
+            Welcome, To Our Website !
+          </div>
+          <div className="text-4xl font-semibold text-center">
+            Alexis Liáng Shù & Juan David Gomez
+          </div>
+          <div className="text-sm text-center">
             It&apos;s been <CustomTimeAgo date="Oct 6, 2024" /> since we met :)
           </div>
-        </h2>
+          <div className="flex margin-auto justify-center pt-4">
 
+          <Image className="rounded-lg"
+            src="/gifs/cuteCats.gif"
+            alt="Pic of us as cats"
+            width={200}
+            height={400}
+            />
+            </div>
+        </div>
         {/* Grid Layout for Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full">
           <Card className="p-6 col-span-1  shadow-lg hover:shadow-xl transition-shadow">
             <BookOpen className="w-12 h-12 text-blue-500 mb-4" />
             <h2 className="text-xl font-semibold mb-2">
-              Explore Random Articles
+              Explore our past dates
             </h2>
             <p className="mb-4">
-              Discover fascinating etymologies, languages, or history jokes.
+              Remember all the things that we have done in the past, add
+              comments and photos!
             </p>
 
-            <Button variant="outline" className="w-full">
-              Go to Explore
+            <Link href="/dates">
+            <Button variant="outline" className="w-full" disabled >
+              Go to Dates
             </Button>
+            </Link>
           </Card>
 
-          <Card className="p-6 col-span-1  shadow-lg hover:shadow-xl transition-shadow">
-            <Book className="w-12 h-12 text-blue-500 mb-4" />
-            <h2 className="text-xl font-semibold mb-2">Book Nook</h2>
-            <p className="mb-4">
-              Your virtual bookshelf of favorite finds from used bookstores.
-            </p>
-            <Button variant="outline" className="w-full">
-              Visit the Book Nook
-            </Button>
-          </Card>
-
-          {/* Joke of the Day Section */}
-          <Card className="p-6 col-span-1  shadow-lg hover:shadow-xl transition-shadow">
-            <Gamepad2 className="w-12 h-12 text-blue-500 mb-4" />
-            <h2 className="text-xl font-semibold mb-2">Joke of the Day 🤣</h2>
-            <p className="mb-4">
-              A personalized History joke, including Soviet ones!!
-            </p>
-            <Button variant="outline" className="w-full">
-              Explore Visual Novels
-            </Button>
-            <p className="text-lg italic">{jokeOfTheDay}</p>
-          </Card>
           {/* Translation App Section */}
           <Card className="p-6 col-span-1 md:col-span-2  shadow-lg hover:shadow-xl transition-shadow">
             <Globe className="w-12 h-12 text-blue-500 mb-4" />
@@ -96,12 +83,36 @@ const HomePage = () => {
           </Card>
 
           <Card className="p-6 col-span-1  shadow-lg hover:shadow-xl transition-shadow">
+            <Book className="w-12 h-12 text-blue-500 mb-4" />
+            <h2 className="text-xl font-semibold mb-2">Book Nook</h2>
+            <p className="mb-4">
+              Your virtual bookshelf of favorite finds from used bookstores.
+            </p>
+            <Button disabled variant="outline" className="w-full">
+              Visit the Book Nook
+            </Button>
+          </Card>
+
+          {/* Joke of the Day Section */}
+          <Card className="p-6 col-span-1  shadow-lg hover:shadow-xl transition-shadow">
+            <Gamepad2 className="w-12 h-12 text-blue-500 mb-4" />
+            <h2 className="text-xl font-semibold mb-2">Joke of the Day 🤣</h2>
+            <p className="mb-4">
+              A personalized History joke, including Soviet ones!!
+            </p>
+            <Button disabled variant="outline" className="w-full">
+              Explore Visual Novels
+            </Button>
+            <p className="text-lg italic">{jokeOfTheDay}</p>
+          </Card>
+
+          <Card className="p-6 col-span-1  shadow-lg hover:shadow-xl transition-shadow">
             <Music className="w-12 h-12 text-blue-500 mb-4" />
             <h2 className="text-xl font-semibold mb-2">Music Corner 🎶</h2>
             <p className="mb-4">
               Listen to your favorite Jpop and Cantopop songs.
             </p>
-            <Button variant="outline" className="w-full">
+            <Button disabled variant="outline" className="w-full">
               Go to Music Corner
             </Button>
           </Card>
@@ -112,7 +123,7 @@ const HomePage = () => {
             <p className="mb-4">
               Map your travels and places you&apos;d love to visit.
             </p>
-            <Button variant="outline" className="w-full">
+            <Button disabled variant="outline" className="w-full">
               View Adventure Journal
             </Button>
           </Card>
@@ -121,9 +132,10 @@ const HomePage = () => {
             <Gamepad2 className="w-12 h-12 text-blue-500 mb-4" />
             <h2 className="text-xl font-semibold mb-2">Visual Novel Vault</h2>
             <p className="mb-4">
-              Keep track of the visual novels you&apos;ve played or want to explore.
+              Keep track of the visual novels you&apos;ve played or want to
+              explore.
             </p>
-            <Button variant="outline" className="w-full">
+            <Button disabled variant="outline" className="w-full">
               Explore Visual Novels
             </Button>
           </Card>
